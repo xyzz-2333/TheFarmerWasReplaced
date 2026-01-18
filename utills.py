@@ -1,8 +1,9 @@
 def move_n_dir(n, dir):
+	#向指定方向连续移动
 	for i in range(n):
 		move(dir)
 def tillall(mode='till'):
-	#
+	#全图改地形
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
 			if mode=='till':
@@ -15,6 +16,7 @@ def tillall(mode='till'):
 				move(North)	
 		move(East)	
 def harvestall():
+	#全图收割
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
 			harvest()
@@ -22,6 +24,7 @@ def harvestall():
 		move(East)
 def goto(x=0,y=0):
 	#前往指定坐标，左下角为0，0
+	#还有优化空间
 	selfx,selfy=get_pos_x(),get_pos_y()
 	#print(selfx,selfy)
 	dx,dy=selfx-x,selfy-y
@@ -43,7 +46,9 @@ def swap_L(index1,index2):
 	pass
 def setarea(begin,x,y):
 	if x>get_world_size() or y>get_world_size() :
-		print('out of index')
+		pass
+		
+		
 		
 	
 		
