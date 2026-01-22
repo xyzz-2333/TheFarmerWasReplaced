@@ -47,7 +47,7 @@ def swap_L(index1,index2):
 def setarea(begin,x,y):
 	if x>get_world_size() or y>get_world_size() :
 		pass
-		
+	return (x0,y0,x1,y1)
 		
 		
 	
