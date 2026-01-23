@@ -44,10 +44,11 @@ def goto(x=0,y=0):
 def swap_L(index1,index2):
 	
 	pass
-def setarea(begin,x,y):
-	if x>get_world_size() or y>get_world_size() :
-		pass
-	return (x0,y0,x1,y1)
+def setarea(x1,y1,x2,y2):
+	if x1>get_world_size() or y1>get_world_size() :
+		print('out of index')
+	
+	return (x1,y1,x2,y2)
 		
 		
 	
