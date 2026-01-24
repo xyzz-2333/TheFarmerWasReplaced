@@ -41,6 +41,15 @@ def goto(x=0,y=0):
 		move_n_dir(dy,South)
 	else:
 		move_n_dir(abs(dy),North)
+def snake_bubble_sort(l=get_world_size(),):
+	for row in range(l):
+		if row%2==0:
+			for col in range(l):
+				if col<l-1 and measure()> measure(East):
+					swap(East)
+			for col in range(l):
+				if col>0 and measure()> measure(West):
+					swap(West)	
 def swap_L(index1,index2):
 	
 	pass
@@ -52,4 +61,3 @@ def setarea(x1,y1,x2,y2):
 		
 		
 	
-		
