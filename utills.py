@@ -1,3 +1,7 @@
+W=North
+S=South
+A=West
+D=East
 def move_n_dir(n, dir):
 	#向指定方向连续移动
 	for i in range(n):
