@@ -63,5 +63,30 @@ def setarea(x1,y1,x2,y2):
 	
 	return (x1,y1,x2,y2)
 		
+def cactus_sort_1_0(x,y,mode='y'):
+	#'''输入区域大小，对指定区域进行仙人掌排序'''
+	sorted = False
+	i=0
+	if mode=='y':
+		while sorted == False:
+			if get_pos_y() == y:
+				goto(get_pos_x(),0)		
+			if measure() > measure(W):
+				swap(W)
+				i=0
+			move(W)
+			i=i+1
+			if i == y:
+				sorted=True
+	else:
+		while sorted == False:
+			if get_pos_x() == x:
+				goto(0,get_pos_y())
+			if measure() > measure(D):
+				swap(D)
+				i=0
+			move(D)
+			i=i+1
+			if i == x:
+				sorted=True
 		
-	
