@@ -45,15 +45,7 @@ def goto(x=0,y=0):
 		move_n_dir(dy,South)
 	else:
 		move_n_dir(abs(dy),North)
-def snake_bubble_sort(l=get_world_size(),):
-	for row in range(l):
-		if row%2==0:
-			for col in range(l):
-				if col<l-1 and measure()> measure(East):
-					swap(East)
-			for col in range(l):
-				if col>0 and measure()> measure(West):
-					swap(West)	
+	
 def swap_L(index1,index2):
 	
 	pass
@@ -90,3 +82,13 @@ def cactus_sort_1_0(x,y,mode='y'):
 			if i == x:
 				sorted=True
 		
+def spawn_maze():
+	plant(Entities.Bush)
+	substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
+	use_item(Items.Weird_Substance, substance)
+def respawn_maze():
+	if get_entity_type() == Entities.Treasure:
+		use_item(Items.Weird_Substance, get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1))
+		return True
+	else:
+		return False
