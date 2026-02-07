@@ -1,6 +1,6 @@
 from utills import *
 #多线程生产
-
+#虽然不知道为什么目前只能单线程运行
 def drone_func():
 	change_hat(Hats.Wizard_Hat)
 	do_a_flip()
