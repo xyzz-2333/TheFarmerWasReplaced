@@ -10,7 +10,7 @@ def muddy_farm():
 					move(North)
 			move(East)
 def reverse_cactus(x,y,mode):
-	#未测试
+	#已测试
 	sorted = False
 	i=0
 	if mode=='y':
@@ -35,3 +35,19 @@ def reverse_cactus(x,y,mode):
 			i=i+1
 			if i == x:
 				sorted=True
+def achievement_reverse_cactus():
+	set_world_size(4)
+	tillall()
+	for i in range(get_world_size()):
+		for j in range(get_world_size()):
+			plant(Entities.Cactus)
+			move(North)
+		move(East)
+	x,y=get_world_size(),get_world_size()
+	for i in range(x):
+		reverse_cactus(x,y,'y')
+		goto(get_pos_x()+1,0)
+	for i in range(y):
+		reverse_cactus(x,y,'x')
+		goto(0,get_pos_y()+1)
+achievement_reverse_cactus()
